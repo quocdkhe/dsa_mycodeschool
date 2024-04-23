@@ -31,19 +31,6 @@ public class SinglyLinkedList{
         size++;
     }
 
-    public void print(){
-        Node p = head;
-        if(p == null){
-            return;
-        }
-
-        while(p != null){
-            System.out.print(p.data + " ");
-            p = p.next;
-        }
-        System.out.println();
-    }
-
     public void insertNode(int data, int n){
         Node temp1 = new Node(data);
         if(n == 1){
@@ -90,9 +77,19 @@ public class SinglyLinkedList{
         size--;
     }
 
-    // Love you, Ngoc Anh, you're pretty cute
     // I love you 3000, Ngoc Anh, love you,
-    // yeu Ngoc Anh chet di duoc ^_^ 
+
+    public void print(){
+        Node p = head;
+        if(p == null){
+            return;
+        }
+        while(p != null){
+            System.out.print(p.data + " ");
+            p = p.next;
+        }
+        System.out.println();
+    }
 
     public void reverse(){
         Node current, prev, next;
