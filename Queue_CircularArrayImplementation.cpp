@@ -1,5 +1,5 @@
 // Queue - Circular array implementation
-#include<iostream>
+#include<stdio.h>
 #define MAX_SIZE 101
 using namespace std;
 
@@ -17,7 +17,7 @@ bool IsFull(){
 	// Inserts an element in queue at rear end
 void Enqueue(int x){
 	if(IsFull()){
-		cout<<"Error: Queue is Full\n";
+		printf("Error: Queue is Full\n");
 		return;
 	}
 	
@@ -33,7 +33,7 @@ void Enqueue(int x){
 	// Removes an element in Queue from front end. 
 void Dequeue(){
 	if(IsEmpty()){
-		cout<<"Error: Queue is Empty\n";
+		printf("Error: Queue is empty!\n");
 		return;
 	}
 	else if(front == rear ){
@@ -46,7 +46,7 @@ void Dequeue(){
 // Returns element at front of queue. 
 int Front(){
 	if(front == -1){
-		cout<<"Error: cannot return front from empty queue\n";
+		printf("Error: cannot return front from empty queue\n");
 		return -1; 
 	}
 	return A[front];
@@ -59,12 +59,12 @@ int Front(){
 void Print(){
 	// Finding number of elements in queue  
 	int count = (rear+ MAX_SIZE - front)%MAX_SIZE + 1;
-	cout<<"Queue       : ";
+	printf("Queue       : ");
 	for(int i = 0; i <count; i++){
 		int index = (front+i) % MAX_SIZE; // Index of element while travesing circularly from front
-		cout<<A[index]<<" ";
+		printf("%d ", A[index]);
 	}
-	cout<<"\n";
+	printf("\n");
 }
 
 int main(){
